@@ -1,5 +1,6 @@
 #! usr/bin/env python3
 import sys
+import os
 import openpyxl
 from datetime import datetime
 from constants import format_sheet, holding_locations, CAD_CASH, CAD_TFSA
@@ -24,6 +25,9 @@ def get_data(sheet):
             values[i] = 0
     return values
 
+if not os.path.exists('CAD_CASH.xlsx') or not os.path.exists('CAD_TFSA.xlsx'):
+    print('Td account data not found. Using previous investment data instead.')
+    exit()
 
 #Scrape data from the cash account
 wb = openpyxl.load_workbook('CAD_CASH.xlsx')
@@ -37,7 +41,7 @@ sheet = wb[wb.sheetnames[0]]
 tfsa_account_values = get_data(sheet)
 
 
-#TODO: Write data to the investments excel file
+# Write data to the investments excel file
 wb = openpyxl.load_workbook('investments.xlsx')
 
 now = datetime.now()
