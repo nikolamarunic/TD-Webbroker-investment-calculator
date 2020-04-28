@@ -35,7 +35,6 @@ cash_account_values = get_data(sheet)
 wb = openpyxl.load_workbook('CAD_TFSA.xlsx')
 sheet = wb[wb.sheetnames[0]]
 tfsa_account_values = get_data(sheet)
-print(tfsa_account_values)
 
 
 #TODO: Write data to the investments excel file
