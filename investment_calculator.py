@@ -38,7 +38,6 @@ for account in accounts:
         cell = sheet[holding + account]
         curr.append(cell.value)
     account_amounts.append(curr)
-print(account_amounts)
 
 current_totals = []
 for i in range (len(holding_locations)):
@@ -48,7 +47,6 @@ for i in range (len(holding_locations)):
 
 # Calculate amount going into each account
 total_invested = sum(current_totals)
-print(total_invested)
 
 new_total = int(sys.argv[1]) + total_invested #add new amount to amount already in account
 
@@ -73,6 +71,7 @@ else:
     for i in range(len(holding_locations)): #iterate over every holding
         tfsa_changes[i] = round(-account_amounts[0][i] - account_amounts[1][i] + after_investing_amounts[i], 2)
 
+print('Amounts added to cash and tfsa:')
 print(cash_changes)
 print (tfsa_changes)
 
