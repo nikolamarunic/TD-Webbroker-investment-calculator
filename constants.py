@@ -18,9 +18,9 @@ def format_sheet(sheet, name):
     sheet['A6'] = 'Cash Added'
     sheet['A7'] = 'TFSA Added'
     
-    sheet['B2'] = 'Canadian Bond Index'
-    sheet['C2'] = 'Canadian Index'
-    sheet['D2'] = 'American Index'
+    sheet['B2'] = 'Canadian Index'
+    sheet['D2'] = 'Canadian Bond Index'
+    sheet['C2'] = 'American Index'
     sheet['E2'] = 'Int\'l Index'
     sheet['A1'] = name
     sheet['F1'] = 'TOTAL'
